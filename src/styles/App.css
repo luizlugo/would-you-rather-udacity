@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+[disabled] {
+    cursor: no-drop;
+}
+
+.navbar>.navbar-collapse>.navbar__user-name {
+    margin-right: 10px;
+}
+
+.card {
+    margin-top: 15px;
+}
+
+.avatars-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.avatars-container .active img {
+    border: 5px solid greenyellow;
+}
+
+.user-avatar-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar-container>.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    flex-shrink: 0;
+}
+
+.nav-tabs {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.poll-view {
+    margin: 50px auto;
+}
+
+.poll-view .poll-options-container {
+    display: flex;
+    align-items: center;
+}
+
+.poll-view .poll-options-container .poll-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    cursor: pointer;
+}
+
+.poll-view .poll-options-container .poll-option label {
+    cursor: pointer;
+}
+
+.bordered {
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.poll-view .poll-options-container > .active {
+    background-color: greenyellow;
+    color: black;
+}
+
+.default-margin-top {
+    margin-top: 20px;
+}
+
+.center-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    margin-bottom: 0;
+    cursor: pointer;
+}
