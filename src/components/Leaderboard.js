@@ -1,8 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LeaderboardRow from './LeaderboardRow';
+import { handleNavigation } from '../actions/navigation';
 
 class Leaderboard extends React.Component {
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(handleNavigation('leaderboard'));
+    }
+
     getUsersByScore = () => {
         const { users } = this.props;
         return Object.keys(users).map((_userId) => {

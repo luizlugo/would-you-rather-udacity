@@ -1,3 +1,6 @@
+##Would you rather - Udacity course exam
+This project is meant to be an educational exam in order to pass the udacity react certification, it is a game that allows you to ask and answer questions, in order to answer you have to choose between two options.
+
 ## Steps to install and run this project
 
 1. Clone the repo in your machine

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { handleNavigation } from '../actions/navigation';
 import { handleAnswerQuestion } from '../actions/questions';
 
@@ -53,9 +54,13 @@ class PollView extends React.Component {
     render() {
         const { questionUser, question, answered } = this.props;
         const { selectedAnswer } = this.state;
-
-        console.log('selectedAnswer', selectedAnswer);
         
+        if (!question) {
+            return (
+                <Redirect to="/404" />
+            );
+        }
+
         return (
             <div className="row poll-view">
                 <div className="offset-md-3 col-md-6">
@@ -110,10 +115,11 @@ const mapStateToProps = ({questions, users, authedUser}, props) => {
     const id = props.match.params.questionId;
     const question = questions[id] ? questions[id] : null;
     const selectedAnswer = users[authedUser].answers[id];
+    const questionUser = question ? users[question.author] : null
 
     return {
         question,
-        questionUser: users[question.author],
+        questionUser,
         authedUser,
         id,
         selectedAnswer,

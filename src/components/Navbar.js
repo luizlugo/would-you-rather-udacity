@@ -9,7 +9,6 @@ class Navbar extends React.Component {
         _e.preventDefault();
         const { dispatch } = this.props;
         dispatch(handleLogout());
-        dispatch(handleNavigation('dashboard'));
     }
 
     updateOptionSelected = (option) => {
@@ -31,13 +30,13 @@ class Navbar extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className={`nav-item ${(navigation === 'dashboard' ? 'active' : '')}`}>
-                                <NavLink to="/dashboard" className="nav-link" onClick={() => this.updateOptionSelected('dashboard')}>Dashboard</NavLink>
+                                <NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
                             </li>
                             <li className={`nav-item ${(navigation === 'leaderboard' ? 'active' : '')}`}>
-                                <NavLink to="/leaderboard" className="nav-link" onClick={() => this.updateOptionSelected('leaderboard')}>Leaderboard</NavLink>
+                                <NavLink to="/leaderboard" className="nav-link">Leaderboard</NavLink>
                             </li>
                             <li className={`nav-item ${(navigation === 'add' ? 'active' : '')}`}>
-                                <NavLink to="/add" className="nav-link" onClick={() => this.updateOptionSelected('add')}>New Question</NavLink>
+                                <NavLink to="/add" className="nav-link">New Question</NavLink>
                             </li>
                         </ul>
                         <span className="navbar-text navbar__user-name">

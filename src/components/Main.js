@@ -5,6 +5,7 @@ import Dashboard from './Dashboard';
 import Leaderboard from './Leaderboard';
 import NewPoll from './NewPoll';
 import PollView from './PollView';
+import NoData from './NoData';
 
 export default class Main extends React.Component {
     render() {
@@ -22,6 +23,7 @@ export default class Main extends React.Component {
                             <Route path="/leaderboard" exact component={Leaderboard} />
                             <Route path="/add" exact component={NewPoll} />
                             <Route path="/questions/:questionId" component={PollView} />
+                            <Route path="/404" component={NoData} />
                             <Route path="/" render={() => <Redirect to="/dashboard" />} />
                         </Switch>
                     </div>

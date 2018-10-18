@@ -30,11 +30,17 @@ class Login extends React.Component {
     }
 
     render() {
-        const { users } = this.props;
+        const { users, location } = this.props;
         const { authedUser, redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to="/" />
+            if (location.state && location.state.from && location.state.from.pathname) {
+                // Redirect user to intented open screen
+                return <Redirect to={location.state.from.pathname} />
+            } else {
+                // Redirect user to default dashboard
+                return <Redirect to="/" />
+            }   
         }
 
         return (

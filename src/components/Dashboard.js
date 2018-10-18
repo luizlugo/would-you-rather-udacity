@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import UnansweredPolls from './UnansweredPolls';
 import AnsweredPolls from './AnsweredPolls';
+import { handleNavigation } from '../actions/navigation';
 
 class Dashboard extends React.Component {
     state = {
         currentTab: 0
     };
+
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(handleNavigation('dashboard'));
+    }
 
     onTabPressed = (tab) => {
         this.setState(() => ({
@@ -16,12 +21,6 @@ class Dashboard extends React.Component {
     }
     
     render() {
-        const { authedUser } = this.props;
-
-        if (!authedUser) {
-            return <Redirect to="/login" />
-        }
-
         return (
             <div className="row">
                 <div className="col-md-12">
@@ -48,8 +47,4 @@ class Dashboard extends React.Component {
         )
     }
 }
-export default connect(({ authedUser }) => {
-    return {
-        authedUser
-    }
-})(Dashboard);
+export default connect()(Dashboard);
